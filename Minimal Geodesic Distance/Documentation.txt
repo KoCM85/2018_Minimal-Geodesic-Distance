@@ -1,0 +1,66 @@
+Solution contain:
+	- Converter.h
+	- Converter.cpp
+	- Distance.h
+	- Distance.cpp
+	- Tests.h
+	- Tests.cpp
+	- Coordinate.h
+	- Main.cpp
+	- Documentation.txt
+
+
+Computing pair of points (each point from a different set, 2 sets) with minimal geodesic distance between them
+based on the spherical law of cosines. But you can change computation to Vincenty formula or Haversine formula (in the Distance.cpp).
+Function computeShorterDistance check all possible routes between two sets.
+
+
+Converter.h and Converter.cpp contain class converter. Class converter - Singleton. Used for convert data.
+Class converter contain:
+	define pi 3.14159265
+	degreesToRadians (Convert degrees to radians)
+		transmitted: degrees
+		returns: radians
+	degreesMinutesSecondsToDegrees (Convert degrees minutes seconds to degrees)
+		transmitted: degrees, minutes, seconds, hemisphere (south - s or S, north - n or N, west - w or W, east - e or E)
+		return: degrees
+	getInstance (return instance of class)
+		return: instance of class
+
+
+Distance.h and Distance.cpp contain class distance. Used for computing distance, shorter distance, and output some info on them.
+Class distance contain:
+	computeDistance (Compute distance between two points. Based on the spherical law of cosines, commented haversine formula and Vincenty formula)
+		transmitted: coordinates for 1st point, coordinates for 2nd point, radius
+		return: distance between two points
+	computeShorterDistance (Compute shortest distance between two points from two sets)
+		transmitted: coordinates for 1st set of points, coordinates for 2nd set of points, radius
+		return: tuple with 1st value - distance, 2nd value - index for point from 1st set of points, 3rd value - index for point from 2st set of points
+	info_computeShorterDistance (Outputs information for result of the function computeShorterDistance)
+		transmitted: coordinates for 1st set of points, coordinates for 2nd set of points, tuple (returned by function computeShorterDistance)
+		NOTE!!!
+		Coordinates for 1st set of points, coordinates for 2nd set of points should be the same as what you used in the function computeShorterDistance
+		and tuple should be the same as what returned by function computeShorterDistance.
+
+
+Tests.h and Tests.cpp contain class test. Class test - Singleton. Used for run tests.
+Class test contain:
+	getInstance (return instance of class)
+		return: instance of class
+	test_degreesToRadians (runs test for function degreesToRadians)
+	test_degreesMinutesSecondsToDegrees (runs test for function degreesMinutesSecondsToDegrees)
+	test_computeDistance (runs test for function computeDistance)
+	test_computeShorterDistance (runs test for function computeShorterDistance)
+	testAll (runs all tests)
+
+
+Coordinate.h contain struct coordinate. Used for save latitude and longtitude.
+Struct coordinate contain:
+	latitude (stores latitude)
+	longitude (stores longitude)
+	setCoordinates (alias for stores a set of points)
+	
+	
+Main.cpp contain main block.
+	If testing is defined, runs testing and end.
+	If testing is not defined, runs all below testing (example).

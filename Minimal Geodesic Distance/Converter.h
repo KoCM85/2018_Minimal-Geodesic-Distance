@@ -1,6 +1,8 @@
 #ifndef CONVERTER_H
 #define CONVERTER_H
 
+#define pi 3.14159265 // PI
+
 // Singleton
 class converter
 {

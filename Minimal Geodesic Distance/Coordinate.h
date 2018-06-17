@@ -10,8 +10,7 @@ struct coordinate
 	double longitude;
 };
 
-// alias
-// set for storing points
+// alias for stores a set of points
 using setCoordinates = std::vector<coordinate>;
 
 #endif //COORDINATE_H

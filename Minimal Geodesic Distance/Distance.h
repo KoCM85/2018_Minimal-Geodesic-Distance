@@ -15,11 +15,11 @@ public:
 	// Compute distance between two points. Based on the spherical law of cosines, commented haversine formula and Vincenty formula
 	double computeDistance(const coordinate & startCoord, const coordinate & destCoord, double & radius);
 
-	// compute shortest distance between two points from two sets.
+	// Compute shortest distance between two points from two sets
 	std::tuple<double, unsigned int, unsigned int> computeShorterDistance(const setCoordinates & setStartCoordinates, 
 		const setCoordinates & setdestCoordinates, double & radius);
 
-	//info for function computeShorterDistance(const setCoordinates &, const setCoordinates &, double &)
+	// Outputs information for result of the function computeShorterDistance(const setCoordinates &, const setCoordinates &, double &)
 	void info_computeShorterDistance(const setCoordinates & setStartCoordinates, const setCoordinates & setDestCoordinates,
 		const std::tuple<double, unsigned int, unsigned int> & shorterDistance);
 };

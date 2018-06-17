@@ -1,7 +1,5 @@
 #include "Converter.h"
 
-#define pi 3.14159265 // PI
-
 double converter::degreesToRadians(const double & degrees)
 {
 	return (degrees * pi) / 180;
